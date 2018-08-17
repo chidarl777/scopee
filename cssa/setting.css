@@ -1,0 +1,22 @@
+.menu ul{
+	color: #fff;
+	font-weight: bolder;
+
+}
+.manu li{
+	font-size: 2em;
+	color: #fff;
+}
+.menu a{
+	color: #fff;
+	font-style: normal;
+}
+.menu a:hover{
+	background-color:#fff;
+	color: black;
+	padding-bottom: 20px;
+}
+.brand{
+	color: #fff;
+	font-size: 2em;
+}

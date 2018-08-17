@@ -1,0 +1,43 @@
+.terms{
+	text-align: center;
+}
+.sign-up-head{
+	text-align: center;
+}
+.sign-up-head h1{
+	color: #0db30d;
+}
+.sign-up-head p{
+	font-size: 15px;
+}
+.capture{
+	color: #FF3300;
+	/*background-color: #0db30d;*/
+}
+.just{
+	color: #CC3300;
+	/*background-color: #0db30d;*/
+}
+.post-image{
+	background-image: url(../images/img-4-thumb.jpg);
+	background-size: cover;
+	margin-bottom: 20px;
+	background-repeat: none;
+}
+#aboutus{
+	font-size: 14px;
+}
+.left-align{
+	text-align: left
+}
+.left-align h1{
+	text-align: center;
+	color: #0db30d;
+}
+.left-align p{
+	font-size: 13
+}
+
+/* So we wont impact the original bootstrap menu or it's pseudo call-out
+arrow the menu is wrapped in a sub dropdown-menu with a chained scroll-menu */
+

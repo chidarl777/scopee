@@ -1,0 +1,15 @@
+.friend img{
+	border-radius: 100%;
+}
+.f-links{
+  background-color: #cccccc;
+  padding-right: 5px;
+  font-size: 12px;
+  margin-top:20px;
+}
+.center-icon{
+	padding-left: 5px;
+}
+.iconz a{
+	color:red;
+}

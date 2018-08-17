@@ -1,0 +1,30 @@
+$(document).ready(function(){
+  $(".hide-crtw-post").click(function(){
+    $(".crtw-post").hide();
+  });
+  $("#create-post").click(function(){
+    $(".crtw-post").show();
+  });
+});
+
+$(document).ready(function(){
+  $("#edit-world").click(function(){
+    $(".nav-browse").show();
+  });
+});
+$(document).ready(function(){
+  $("#edit-profile").click(function(){
+    $("#change-background-pic").show();
+     $("#change-pic").show();
+  });
+});
+$(document).ready(function(){
+  $("#change-pic").click(function(){
+    $(".change-background-pic").show();
+  });
+});
+$(document).ready(function(){
+  $("#change-bg-image").click(function(){
+    $("#change_b").show();
+  });
+});

@@ -1,0 +1,16 @@
+RewriteCond %{HTTP_HOST} !^www.scopee.com$ [NC]
+RewriteRule ^(.*)$ http://www.scopee.com/$1 [L,R=301]
+
+RewriteRule ^([a-zA-Z0-9_-]+)$ /worlds.php\?u=$1
+RewriteRule ^([a-zA-Z0-9_-]+)/$ worlds.php?u=$1
+
+RewriteEngine on
+RewriteCond %{HTTP_REFERER} !^$
+RewriteCond %{HTTP_REFERER} !^http://(www\.)?scopee.com/.*$ [NC]
+RewriteRule \.(gif|jpg)$ http://www.scopee.com/404.html [R,L] 
+
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_URI} !scopee.php
+RewriteCond %{REQUEST_URI} !(.*)/$
+RewriteRule ^(.*)$ http://scopee.com/$1/ [L,R=301]

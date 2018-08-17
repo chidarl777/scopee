@@ -1,0 +1,51 @@
+<Files awstats.pl>
+AuthUserFile /hsphere/local/home/c202088/.statspasswd
+AuthGroupFile /dev/null
+AuthName EnterPassword
+AuthType Basic
+require user c202088
+</Files>
+Options +FollowSymlinks -MultiViews -Indexes
+RewriteEngine on
+RewriteBase /
+
+#adding www. to scopee.in
+RewriteCond "%{HTTP_HOST}" "!^www\." [NC]
+RewriteCond "%{HTTP_HOST}" "!^$"
+RewriteRule "^/?(.*)"      "http://www.%{HTTP_HOST}/$1" [L,R,NE]
+
+
+
+#rewriting pages
+RewriteRule ^/ index.php
+RewriteRule ^registration registration.php
+RewriteRule ^login login.php
+RewriteRule ^forget_password forget_password.php
+
+#no hot linking
+RewriteCond %{HTTP_REFERER} !^$
+RewriteCond %{HTTP_REFERER} !^http://(www\.)?scopee\.in/ [NC]
+RewriteCond %{REQUEST_URI} !hotlink\.(gif|png) [NC]
+RewriteRule .*\.(gif|jpg|png)$ http://scopee.in/image/logo-img/logo.png [NC] 
+
+#auto translating of webpage to countries language
+RewriteRule ^(.*)-u$ http://www.google.com/translate_c?hl=u&sl=en&u=http://scopee.in/$1 [R,NC]
+#disable directory browsing
+
+Options All -Indexes
+
+RewriteRule ^home/([a-zA-Z0-9_-]+)/([0-9]+)\.php$ home.php?u=$2 [L]
+
+RewriteRule ^ref/([a-zA-Z0-9_-]+)$ index.php?ref=$2 [L]
+RewriteRule ^ref/([a-zA-Z0-9_-]+)/$ index.php?ref=$2[L]
+
+
+
+RewriteRule ^world/(.*)$ world.php?wor=$1[L,QSA,PT]
+RewriteRule ^world/(.*)/$ world.php?wor=$1[L,QSA,PT]
+ 
+
+RewriteRule ^world/rd/(.*)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)$ readmore.php?rd=$1&pid=$2&title=$3[PT,QSA,L]
+RewriteRule ^world/rd/(.*)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/$ readmore.php?rd=$1&pid=$2&title=$3 [PT,QSA,L]
+
+
